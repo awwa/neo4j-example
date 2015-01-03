@@ -8,8 +8,10 @@ session = Neo4j::Session.open(:server_db)
 l1 = "北斗神拳"
 l2 = "伝承者"
 labels = [l1, l2]
-label1 = Neo4j::Label.create(l1)
-label1.create_index(:name)
+i1 = Neo4j::Label.create(l1)
+i1.create_index(:name)
+i2 = Neo4j::Label.create(l2)
+i2.create_index(:name)
 
 Neo4j::Transaction.run do
 
